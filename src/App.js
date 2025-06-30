@@ -7,7 +7,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome to Integration Ninjas
+          Welcome to Prateek's React App! This is a simple React application running in a Docker container.
+          <br />
+          It is designed to demonstrate a basic setup with Docker and GitHub Actions for CI/CD. 
         </p>
         <a
           className="App-link"
