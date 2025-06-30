@@ -14,17 +14,17 @@ jobs:
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
-        run: docker build -t prateek-usefulbi/reactjs-app .
+        run: docker build -t smartpreetu/reactjs-app .
       - name: Publish image to docker hub
-        run: docker push prateek-usefulbi/reactjs-app:latest   
+        run: docker push smartpreetu/reactjs-app:latest   
 
   deploy: 
     needs: build
     runs-on: self-hosted    
     steps:
       - name: Pull image from docker hub
-        run: docker pull prateek-usefulbi/reactjs-app:latest 
+        run: docker pull smartpreetu/reactjs-app:latest 
       - name: Delete Old Container
         run: docker rm -f reactContainer
       - name: Run docker container
-        run: docker run -d -p 3000:80 --name reactContainer prateek-usefulbi/reactjs-app   
+        run: docker run -d -p 3000:80 --name reactContainer smartpreetu/reactjs-app   
